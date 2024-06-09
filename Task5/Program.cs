@@ -3,6 +3,7 @@ var cat = new Cat() { hand = 4 };
 
 cat.SayHi();
 cat.SayHand();
+
 public abstract class Animal
 {
     public int hand { get; set; }
