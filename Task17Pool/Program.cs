@@ -1,11 +1,11 @@
 ﻿ManualResetEvent thread = new ManualResetEvent(false);
+ThreadPool.QueueUserWorkItem(new WaitCallback((object x) =>
+{
+    Enter();
+}));
 
 while (true)
 {
-    ThreadPool.QueueUserWorkItem(new WaitCallback((object x) =>
-    {
-        Enter();
-    }));
     Console.ReadLine();
     thread.Set();
 }
@@ -13,8 +13,10 @@ while (true)
 
 void Enter()
 {
-    thread.WaitOne();
-    thread.Reset();
-
-    Console.WriteLine("Enter");
+    while (true)
+    {
+        thread.WaitOne();
+        thread.Reset();
+        Console.WriteLine("Enter");
+    }
 }
