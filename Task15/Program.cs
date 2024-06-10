@@ -53,3 +53,6 @@ void GenerateArray(int X)
 
     Console.WriteLine($"Количество элементов, равных {X}: {count}");
 }
+
+
+
