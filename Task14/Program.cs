@@ -13,6 +13,7 @@ using (MyDbContext context = new MyDbContext())
     context.SaveChanges();
 
     User tom = new User { Name = "Tom", Company = apple };
+
     User bob = new User { Name = "Bob", Company = apple };
     User alice = new User { Name = "Alice", Company = samsung };
     User kate = new User { Name = "Kate", Company = samsung };
