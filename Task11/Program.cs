@@ -27,8 +27,6 @@ public class Publisher
             Console.WriteLine("Отписка");
         }
     }
-
-
     public void RaseEvent(int x)
     {
         if (myEvent != null)

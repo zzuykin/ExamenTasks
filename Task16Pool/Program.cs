@@ -14,10 +14,10 @@ for(int i = 0; i < countOfThreads; i++)
     myThreads[i] = new ManualResetEvent(false);
     int num = i;
 
-    ThreadPool.QueueUserWorkItem(new WaitCallback((object x) => {
+    ThreadPool.QueueUserWorkItem(_ => {
         GenerateArray(X, times, num);
         myThreads[num].Set();
-    }),i);
+    },i);
 }
 
 WaitHandle.WaitAll(myThreads);

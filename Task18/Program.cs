@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-
+builder.Services.AddHttpClient();
 // Register the Swagger generator
 builder.Services.AddRazorPages();
 builder.Services.AddSwaggerGen(c =>
